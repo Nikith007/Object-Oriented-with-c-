@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+
+bool isPerfectNumber(int num) {
+    if (num <= 1) return false;
+
+    int sum = 0;
+    for (int i = 1; i <= num / 2; ++i) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+    return sum == num;
+}
+
+bool isInteger(const std::string& str) {
+    std::istringstream iss(str);
+    int n;
+    char c;
+    return iss >> n && !(iss >> c);
+}
+
+int main() {
+    std::string input;
+    std::cout << "Enter a number: ";
+    std::cin >> input;
+
+    if (!isInteger(input)) {
+        std::cout << input << " is not a valid integer." << std::endl;
+    } else {
+        int number = std::stoi(input);
+        if (number <= 0) {
+            std::cout << number << " is not a valid positive integer." << std::endl;
+        } else {
+            if (isPerfectNumber(number)) {
+                std::cout << number << " is a perfect number." << std::endl;
+            } else {
+                std::cout << number << " is not a perfect number." << std::endl;
+            }
+        }
+    }
+    return 0;
+}
