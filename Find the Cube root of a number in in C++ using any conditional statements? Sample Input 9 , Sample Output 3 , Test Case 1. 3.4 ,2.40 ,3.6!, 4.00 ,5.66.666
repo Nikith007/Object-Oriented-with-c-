@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+double cubeRoot(double num) {
+    if (num == 0.0) {
+        return 0.0;
+    }
+
+    double x = abs(num); 
+    double epsilon = 0.00001; 
+    double guess = x / 3.0; 
+
+    while (abs(guess * guess * guess - x) > epsilon) {
+        guess = (2 * guess + x / (guess * guess)) / 3.0;
+    }
+
+    if (num < 0.0) {
+        guess = -guess;
+    }
+
+    return guess;
+}
+
+int main() {
+    double number;
+    
+    cout << "Enter a number to find its cube root: ";
+    cin >> number;
+    
+    double result = cubeRoot(number);
+    cout << "Cube root of " << number << " is: " << result << endl;
+    
+    return 0;
+}
