@@ -1,0 +1,30 @@
+#include <iostream>
+
+class Box {
+public:
+    double length;
+
+    Box(double l) : length(l) {}
+
+    void setWidth(double w) {
+        width = w;
+    }
+
+    double getWidth() const {
+        return width;
+    }
+
+private:
+    double width;
+};
+
+int main() {
+    Box box1(10.0); 
+
+    box1.setWidth(20.0);
+
+    std::cout << "Length: " << box1.length << std::endl;
+    std::cout << "Width: " << box1.getWidth() << std::endl;
+
+    return 0;
+}
