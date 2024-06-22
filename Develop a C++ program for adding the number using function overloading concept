@@ -1,0 +1,29 @@
+#include <iostream>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+double add(double a, double b) {
+    return a + b;
+}
+
+double add(double a, double b, double c) {
+    return a + b + c;
+}
+
+int main() {
+    int int1 = 10, int2 = 20, int3 = 30;
+    std::cout << "Sum of " << int1 << " and " << int2 << " is: " << add(int1, int2) << std::endl;
+    std::cout << "Sum of " << int1 << ", " << int2 << " and " << int3 << " is: " << add(int1, int2, int3) << std::endl;
+
+    double double1 = 10.5, double2 = 20.5, double3 = 30.5;
+    std::cout << "Sum of " << double1 << " and " << double2 << " is: " << add(double1, double2) << std::endl;
+    std::cout << "Sum of " << double1 << ", " << double2 << " and " << double3 << " is: " << add(double1, double2, double3) << std::endl;
+
+    return 0;
+}
