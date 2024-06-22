@@ -1,0 +1,18 @@
+#include <iostream>
+
+
+int add(int a, int b = 20, int c = 30) {
+    return a + b + c;
+}
+
+int main() {
+    std::cout << "add(10, 15, 25) = " << add(10, 15, 25) << std::endl;
+
+    
+    std::cout << "add(10, 15) = " << add(10, 15) << std::endl;
+
+    
+    std::cout << "add(10) = " << add(10) << std::endl;
+
+    return 0;
+}
